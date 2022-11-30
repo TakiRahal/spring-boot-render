@@ -55,10 +55,16 @@
 
 
 ## Create Postegres database from Render.com
-    https://dashboard.render.com/ 
+    https://dashboard.render.com/
 
 
 ### Modify connections params on application.properties
+
+    server.tomcat.accesslog.enabled=true
+    
+    spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.hibernate.show-sql=true
 
     spring.datasource.url=jdbc:postgresql://dpg-{custom-url}.render.com:5432/{name_database}
     spring.datasource.username=your_username
