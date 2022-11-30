@@ -13,7 +13,7 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication implements CommandLineRunner {
+public class DemoApplication {
 
 	@Autowired
 	UserRepository userRepository;
@@ -22,13 +22,13 @@ public class DemoApplication implements CommandLineRunner {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		User user = new User();
-		user.setFirstName("Rahal");
-		user.setLastName("Taki");
-		userRepository.save(user);
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		User user = new User();
+//		user.setFirstName("Rahal");
+//		user.setLastName("Taki");
+//		userRepository.save(user);
+//	}
 
 	@GetMapping("test")
 	public String helloWorld(){
