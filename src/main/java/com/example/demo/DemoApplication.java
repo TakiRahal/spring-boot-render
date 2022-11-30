@@ -10,33 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
-@RestController
 public class DemoApplication {
-
-	@Autowired
-	UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-	}
-
-//	@Override
-//	public void run(String... args) throws Exception {
-//		User user = new User();
-//		user.setFirstName("Rahal");
-//		user.setLastName("Taki");
-//		userRepository.save(user);
-//	}
-
-	@GetMapping("test")
-	public String helloWorld(){
-
-		List<User> userList = userRepository.findAll();
-		userList.stream().forEach(user -> {
-			System.out.println("User "+user.getFirstName());
-		});
-		return "Hello Render";
 	}
 }
