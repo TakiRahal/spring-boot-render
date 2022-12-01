@@ -25,7 +25,7 @@ public class DemoApplication {
 	public String fetchUser(){
 		Optional<User> userOpional = userRepository.findById(1L);
 		if(userOpional.isPresent()){
-			return "User exist = "+userOpional.get().getFirstName() + " " + userOpional.get().getLastName();
+			return "User exist : "+userOpional.get().getFirstName() + " " + userOpional.get().getLastName();
 		}
 		return "Not found";
 	}
