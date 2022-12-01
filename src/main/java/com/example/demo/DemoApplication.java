@@ -19,13 +19,11 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	/*
 	@GetMapping("count-users")
 	public String getCountUsers(){
 		long nbeUsers = userRepository.count();
 		return "Number of users = "+nbeUsers;
 	}
-	*/
 
 
 	@GetMapping("add-user")
