@@ -22,10 +22,10 @@ public class DemoApplication {
 	}
 
 	@GetMapping("fetch-user")
-	public String fetchUsers(){
-		Optional<User> userOptional = userRepository.findById(1L);
-		if( userOptional.isPresent() ){
-			return userOptional.get().getFirstName() +" "+userOptional.get().getLastName();
+	public String fetchUser(){
+		Optional<User> userOpional = userRepository.findById(1L);
+		if(userOpional.isPresent()){
+			return "User exist = "+userOpional.get().getFirstName() + " " + userOpional.get().getLastName();
 		}
 		return "Not found";
 	}
@@ -38,5 +38,4 @@ public class DemoApplication {
 		userRepository.save(user);
 		return "User added successfully";
 	}
-
 }
