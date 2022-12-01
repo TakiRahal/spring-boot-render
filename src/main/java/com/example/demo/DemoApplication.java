@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @SpringBootApplication
 @RestController
 public class DemoApplication {
@@ -19,16 +21,14 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	/*
-	@GetMapping("list")
+	@GetMapping("fetch-user")
 	public String fetchUsers(){
-		final String[] result = {"Hello Render "};
-		userRepository.findAll().stream().forEach(user -> {
-			result[0] += user.getFirstName()+" "+user.getLastName();
-		});
-		return result[0];
+		Optional<User> userOptional = userRepository.findById(1L);
+		if( userOptional.isPresent() ){
+			return userOptional.get().getFirstName() +" "+userOptional.get().getLastName();
+		}
+		return "Not found";
 	}
-	*/
 
 	@GetMapping("add-user")
 	public String addUser(){
