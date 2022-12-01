@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @SpringBootApplication
 @RestController
 public class DemoApplication {
@@ -21,15 +19,16 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@GetMapping("fetch-user")
-	public String fetchUser(){
-
+	@GetMapping("count-users")
+	public String getCountUsers(){
 		long nbeUsers = userRepository.count();
-		return "Number of users" + nbeUsers;
+		return "Number of users = "+nbeUsers;
 	}
+
 
 	@GetMapping("add-user")
 	public String addUser(){
+
 		User user = new User();
 		user.setFirstName("Render");
 		user.setLastName("Spring Boot");
