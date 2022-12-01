@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-// @RestController
+@RestController
 public class DemoApplication {
 
-//	@Autowired
-//	UserRepository userRepository;
+	@Autowired
+	UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -28,6 +28,7 @@ public class DemoApplication {
 		});
 		return result[0];
 	}
+	*/
 
 	@GetMapping("add-user")
 	public String addUser(){
@@ -37,6 +38,5 @@ public class DemoApplication {
 		userRepository.save(user);
 		return "User added successfully";
 	}
-	*/
 
 }
