@@ -23,11 +23,9 @@ public class DemoApplication {
 
 	@GetMapping("fetch-user")
 	public String fetchUser(){
-//		Optional<User> userOpional = userRepository.findById(1L);
-//		if(userOpional.isPresent()){
-//			return "User exist : "+userOpional.get().getFirstName() + " " + userOpional.get().getLastName();
-//		}
-		return "Not found";
+
+		long nbeUsers = userRepository.count();
+		return "Number of users" + nbeUsers;
 	}
 
 	@GetMapping("add-user")
