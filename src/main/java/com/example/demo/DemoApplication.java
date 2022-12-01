@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+// @RestController
 public class DemoApplication {
 
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-
+	/*
 	@GetMapping("list")
 	public String fetchUsers(){
 		final String[] result = {"Hello Render "};
@@ -37,6 +37,6 @@ public class DemoApplication {
 		userRepository.save(user);
 		return "User added successfully";
 	}
-
+	*/
 
 }
