@@ -77,4 +77,4 @@
 
 ## DEMO 
     
-[![IMAGE ALT TEXT HERE](https://github.com/TakiRahal/angular-sonarqube/blob/main/src/assets/demo.png)](https://youtu.be/-Ih_ky5HMEA)
+[![IMAGE ALT TEXT HERE](https://github.com/TakiRahal/spring-boot-render/blob/main/src/main/resources/static/spring_boot_render.png)](https://youtu.be/-Ih_ky5HMEA)
